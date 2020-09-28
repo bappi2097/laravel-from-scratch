@@ -7,20 +7,18 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ContactMe extends Mailable
+class Contact extends Mailable
 {
     use Queueable, SerializesModels;
-
-    public $topic;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($topic)
+    public function __construct()
     {
-        $this->topic = $topic;
+        //
     }
 
     /**
@@ -30,9 +28,6 @@ class ContactMe extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.markdown-contact-me')
-            ->subject("More Information about" . $this->topic);
-        // return $this->view('emails.contact-me')
-        // ->subject("More Information about" . $this->topic);
+        return $this->markdown('email.contact');
     }
 }
