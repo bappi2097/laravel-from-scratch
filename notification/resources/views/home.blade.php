@@ -9,9 +9,9 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
                     {{ __('You are logged in!') }}
@@ -19,5 +19,9 @@
             </div>
         </div>
     </div>
+    <form action="{{route('store')}}" method="post">
+        @csrf
+        <button class="btn btn-primary" type="submit">Payment</button>
+    </form>
 </div>
 @endsection
