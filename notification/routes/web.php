@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\UserNotificationsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +22,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/payment', [PaymentController::class, 'store'])->name('store')->middleware('auth');
+Route::post('payment', [PaymentController::class, 'store'])->name('store')->middleware('auth');
+Route::get('notifications', [UserNotificationsController::class, 'show'])->name('show')->middleware('auth');
