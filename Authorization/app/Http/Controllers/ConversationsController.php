@@ -15,6 +15,7 @@ class ConversationsController extends Controller
     }
     public function show(Conversation $conversation)
     {
+        // dd($conversation->user->name);
         return view('conversations.show', [
             'conversation' => $conversation
         ]);

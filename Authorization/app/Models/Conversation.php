@@ -11,10 +11,10 @@ class Conversation extends Model
     protected $guarded = [];
     public function user()
     {
-        return $this->belongsTo(App\Models\User::class);
+        return $this->belongsTo(User::class);
     }
     public function replies()
     {
-        return $this->hasMany(App\Models\Reply::class);
+        return $this->hasMany(Reply::class);
     }
 }

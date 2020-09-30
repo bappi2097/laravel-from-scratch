@@ -11,6 +11,10 @@ class Reply extends Model
     protected $guarded = [];
     public function conversation()
     {
-        return $this->belongsTo(App\Models\Conversation::class);
+        return $this->belongsTo(Conversation::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

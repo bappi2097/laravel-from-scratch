@@ -25,7 +25,7 @@ class ConversationFactory extends Factory
         return [
             'user_id' => rand(1, 4),
             'title' => $this->faker->sentence,
-            'body' => $this->faker->paragraph,
+            'body' => $this->faker->paragraph(5),
             'best_reply_id' => null
         ];
     }
