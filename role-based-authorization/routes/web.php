@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+auth()->loginUsingId(1);
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/reports', function () {
+    return "View Reports";
+})->middleware('can:view_reports');
