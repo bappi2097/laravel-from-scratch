@@ -15,6 +15,10 @@ class CreateConversationsTable extends Migration
     {
         Schema::create('conversations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->onDelete('cascade');
+            $table->string('title');
+            $table->text('body');
+            $table->unsignedBigInteger('best_reply_id')->nullable();
             $table->timestamps();
         });
     }
