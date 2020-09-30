@@ -9,6 +9,11 @@ class Conversation extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function setBestReply(Reply $reply)
+    {
+        $this->best_reply_id = $reply->id;
+        $this->save();
+    }
     public function user()
     {
         return $this->belongsTo(User::class);

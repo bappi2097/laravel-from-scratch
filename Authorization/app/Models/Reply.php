@@ -9,6 +9,10 @@ class Reply extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function isBest()
+    {
+        return $this->conversation->best_reply_id == $this->id;
+    }
     public function conversation()
     {
         return $this->belongsTo(Conversation::class);
