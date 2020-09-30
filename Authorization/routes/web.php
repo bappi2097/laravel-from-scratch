@@ -22,6 +22,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('conversations', [ConversationsController::class, 'index']);
-Route::get('conversations/{conversation}', [ConversationsController::class, 'show']);
+Route::get('conversations/{conversation}', [ConversationsController::class, 'show'])->middleware("can:view, conversation");
 Route::post('best-replies/{reply}', [ConversationBestReplyController::class, 'store']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

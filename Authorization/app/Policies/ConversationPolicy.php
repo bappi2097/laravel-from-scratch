@@ -30,7 +30,7 @@ class ConversationPolicy
      */
     public function view(User $user, Conversation $conversation)
     {
-        //
+        return $conversation->user->is($user);
     }
 
     /**
